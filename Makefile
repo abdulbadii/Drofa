@@ -29,11 +29,9 @@ ifneq ($(shell command -v x86_64-w64-mingw32-c++ ), )
 else
 	CXX ?= x86_64-w64-mingw32-c++-posix
 endif
-$(info LDFLAGS $(LDFLAGS) )
 endif
 
 LDFLAGS += -static -Wl,--no-as-needed
-$(info OutNow LDFLAGS $(LDFLAGS) )
 
 # Special tuning compilation
 tune: CXXFLAGS  = -Wall -std=c++11 -O3 -march=native -flto -pthread -fopenmp -fno-exceptions -D_TUNE_
